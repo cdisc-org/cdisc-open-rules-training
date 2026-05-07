@@ -1,4 +1,4 @@
-# cdisc-open-rules
+# cdisc-open-rules-training
 Contains rules and test data that can be processed by CORE
 
 **BEFORE CONTRIBUTING, MAKE SURE YOU HAVE GONE THROUGH THE CDISC VOLUNTEERING ONBOARDING PROCESS** \
