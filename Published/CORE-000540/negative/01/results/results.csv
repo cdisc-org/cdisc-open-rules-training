@@ -1,3 +1,0 @@
-Dataset,Record,Variable,Value
-facm.csv,1,dataset_name,FACM
-facm.csv,1,$list_dataset_names,['FACM']
