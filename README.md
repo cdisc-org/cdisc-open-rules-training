@@ -1,20 +1,21 @@
 # cdisc-open-rules-training
-Contains rules and test data that can be processed by CORE
 
-**BEFORE CONTRIBUTING, MAKE SURE YOU HAVE GONE THROUGH THE CDISC VOLUNTEERING ONBOARDING PROCESS** \
-https://www.cdisc.org/volunteer
+**THIS IS THE TRAINING ENVIRONMENT FOR CDISC OPEN RULES AUTHORING**\
+Contains rules and test data used for training purposes only. None of the actions done in this environment will be used officially. This is environment has been created to test get hands-on experience with the system and the rules. If you wish to contribute to the official CDISC Open Rules authoring: https://github.com/cdisc-org/cdisc-open-rules then make sure that you have gone through the CDISC volunteerinf onboarding process: https://www.cdisc.org/volunteer
 
-**SUPPLEMENTARY GUIDE** \
+**RULE AUTHORING PROCESS USING Git & VSCode** \
 Instructions below will guide you step-by-step through the:
 - First-time Local Setup Steps
 - Rule Authoring and Test Data Creation Process
+
+If you are less familiar with GitHub, Git and VSCode then you can access the supplementary guide which includes printscreens along with the instructions.
 
 # First-time Local Setup Steps
 
 ***IMPORTANT NOTE*** \
 _You may need your IT support team to install some of the following software for you. In particular, the setup script requires python3.12 to run properly. If you don't have it installed, the script will attempt to install it for you, but this is likely to be blocked by your company settings. If so, you will need to contact IT._
 
-**Follow steps 1 - 9 carefully.**
+**Follow steps 1 - 11 carefully.**
 
 1) Create a free GitHub account: https://github.com/signup
 2) Install Git, following the instructions here: https://git-scm.com/install
@@ -24,9 +25,7 @@ _You may need your IT support team to install some of the following software for
 3) Install VSCode (***not*** VSCodeUser), following the instructions here: https://code.visualstudio.com/download
 4) Open VSCode and a terminal within it:
    - Top Menu → Terminal → New Terminal (check the three dots in the top menu if you don't see 'Terminal')
-5) Open VSCode and a terminal within it:
-   - Top Menu → Terminal → New Terminal (check the three dots in the top menu if you don't see 'Terminal')
-   - Configure your Git identity by running the following two commands in the terminal, replacing the placeholder values with your own:
+5) Configure your Git identity by running the following two commands in the terminal, replacing the placeholder values with your own:
 
       `git config --global user.name "Your Name"`
 
@@ -38,23 +37,23 @@ _You may need your IT support team to install some of the following software for
    - If any of the folder names you are navigating through have spaces (eg 'My Folder'), you will need to wrap the path in quotes,\
      eg: `cd "C:\Users\sam\Documents\Rules Folder"`
 7) Clone this repo into that directory by running the following command (**DO NOT RUN MORE THAN ONCE**): \
-       `git clone --recurse-submodules https://github.com/cdisc-org/cdisc-open-rules.git`
+       `git clone --recurse-submodules https://github.com/cdisc-org/cdisc-open-rules-training.git`
    > **NOTE:** If you encounter `The term 'git' is not recognized as the name of a cmdlet, function, script file, or operable program.`, Git's installation directory has not been added to your system PATH. See [this StackOverflow answer](https://stackoverflow.com/questions/4492979/error-git-is-not-recognized-as-an-internal-or-external-command) for instructions on manually adding Git to your PATH.
 
    _***IMPORTANT NOTE***\
    Unless something goes badly wrong and you need to fully delete the entire directory, you should never need to run this command again._
 
-8) In VSCode, select "Open Folder" and select the repository folder you just cloned - it should be called `cdisc-open-rules`
+8) In VSCode, select "Open Folder" and select the repository folder you just cloned - it should be called `cdisc-open-rules-training`
    - VSCode may show a prompt asking if you trust the authors of the files in this folder — click **Yes, I trust the authors**
    - You should also see a prompt to install the workspace recommended extensions in the bottom right corner — click **Install All**. If you miss this prompt, don't worry — step 10 will cover it
 
 9) This should re-open a new terminal in the repository folder. If this doesn't happen, open a new terminal in VSCode and navigate to the repository folder again.
 
 10) You will need to setup the python environment, which will take a little bit of time.
-   - Assuming you are in the cdisc-open-rules folder in the VSCode terminal, run one of the following depending on your operating system (ignore messages and warnings):
-     - WINDOWS: `.\setup\windows_setup.bat`
-     - MAC: `./setup/bash_setup.sh`
-   - Windows might prompt you asking if you want to install python - the answer is yes!
+    - Assuming you are in the cdisc-open-rules folder in the VSCode terminal, run one of the following depending on your operating system (ignore messages and warnings):
+        - WINDOWS: `.\setup\windows_setup.bat`
+        - MAC: `./setup/bash_setup.sh`
+    - Windows might prompt you asking if you want to install python - the answer is yes!
 
    _***IMPORTANT NOTE***\
    If you start the setup script and stop it midway through, you may get some strange errors when you try to run rules in the future. If you have any doubts, rerun the setup script, and make sure it completes._
