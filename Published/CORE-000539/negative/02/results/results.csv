@@ -1,3 +1,0 @@
-Dataset,Record,Variable,Value
-mhlb.csv,1,dataset_name,MHLB
-mhlb.csv,1,$list_dataset_names,"['MHLB', 'DM', 'EX']"
