@@ -50,23 +50,6 @@ Authorities:
               Version: '1'
             Version: '2.0'
         Version: '3.2'
-      - Name: TIG
-        References:
-          - Citations:
-              - Cited Guidance: The description or date and/or time of a time point that acts as
-                  a fixed reference for characterizing the end of an
-                  observation. This is the sponsor-defined reference point
-                  referred to by --ENRTPT
-                Document: SDTM v2.1
-                Item: --ENTPT
-                Section: Section 3.1.5 Timing Variables for All Classes
-            Origin: TIG Conformance Rules
-            Rule Identifier:
-              Id: TIG0324
-              Version: '1'
-            Version: '1.0'
-        Substandard: SDTM
-        Version: '1.0'
 Check:
   all:
     - name: --ENTPT
@@ -77,10 +60,10 @@ Core:
   Id: CORE-000106
   Status: Published
   Version: '1'
-Description: Raise an error when --ENTPT is completed and --ENRTPT is not completed.
+Description: Raise an error when --ENTPT is populated and --ENRTPT is not populated.
 Executability: Fully Executable
 Outcome:
-  Message: --ENTPT is completed, but --ENRTPT is not completed.
+  Message: --ENTPT is populated, but --ENRTPT is not populated.
   Output Variables:
     - --ENRTPT
     - --ENTPT
@@ -92,5 +75,4 @@ Scope:
   Domains:
     Include:
       - ALL
-  Use Case: INDH, PROD
 Sensitivity: Record
