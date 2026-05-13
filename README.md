@@ -8,7 +8,7 @@ Instructions below will guide you step-by-step through the:
 - First-time Local Setup Steps
 - Rule Authoring and Test Data Creation Process
 
-If you are less familiar with GitHub, Git and VSCode then you can access the supplementary guide which includes printscreens along with the instructions.
+If you are less familiar with GitHub, Git and VSCode then you can access the [supplementary guide](docs/files/cdisc-open-rules-training-authoring-guidelines.pdf) which includes printscreens along with the instructions.
 
 # First-time Local Setup Steps
 
@@ -279,7 +279,7 @@ Once your rule and test data pass these checks, the PR can be merged.
        `git checkout main` \
        `git pull origin main`
 
-For further detail on any of these steps or git in general, see [supplementary guide](https://docs.google.com/document/d/15ydgj4AqtEnFtlXL-J4DLJV32q_Q71gKn0ucu4tYYQw/edit?pli=1&tab=t.0)
+For further detail on any of these steps or git in general, see [supplementary guide](docs/files/cdisc-open-rules-training-authoring-guidelines.pdf)
 
 # Something's Wrong!
 
