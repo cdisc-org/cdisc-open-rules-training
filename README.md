@@ -279,8 +279,6 @@ Once your rule and test data pass these checks, the PR can be merged.
        `git checkout main` \
        `git pull origin main`
 
-For further detail on any of these steps or git in general, see [supplementary guide](docs/files/cdisc-open-rules-training-authoring-guidelines.pdf)
-
 # Something's Wrong!
 
 Git is great, but it is easy to overlook something and make a mistake. \
