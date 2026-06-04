@@ -54,4 +54,6 @@ Scope:
     Include:
       - TO
   Use Case: PROD
-Sensitivity: Record
+Sensitivity: Group
+Grouping Variables:
+  - SPTOBID
