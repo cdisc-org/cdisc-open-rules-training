@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\valen\cdisc-open-rules-training\engine\core.py", line 18, in <module>
+    import click
+ModuleNotFoundError: No module named 'click'
