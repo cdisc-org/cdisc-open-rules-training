@@ -1,346 +1,124 @@
 Authorities:
-  - Organization: CDISC
-    Standards:
-      - Name: USDM
-        References:
-          - Citations:
-              - Cited Guidance: 'Referenced id values must be valid according to the USDM schema
-                  based on the API specification.'
-                Document: 'USDM_CORE_Rules.xlsx'
-            Origin: 'USDM Conformance Rules'
-            Rule Identifier:
-              Id: 'DDF00262'
-              Version: '1'
-            Version: '1.0'
-        Version: '4.0'
-Check: |-
-  (
-    $idl := **[id and instanceType]{id:$distinct(instanceType)};
-    $valid_entities := 
-      {
-        "Activity.biomedicalConceptIds": [
-            "BiomedicalConcept"
-        ],
-        "Activity.nextId": [
-            "Activity"
-        ],
-        "Activity.timelineId": [
-            "ScheduleTimeline"
-        ],
-        "Activity.childIds": [
-            "Activity"
-        ],
-        "Activity.previousId": [
-            "Activity"
-        ],
-        "Activity.bcSurrogateIds": [
-            "BiomedicalConceptSurrogate"
-        ],
-        "Activity.bcCategoryIds": [
-            "BiomedicalConceptCategory"
-        ],
-        "AdministrableProductIdentifier.scopeId": [
-            "Organization"
-        ],
-        "Administration.administrableProductId": [
-            "AdministrableProduct"
-        ],
-        "Administration.medicalDeviceId": [
-            "MedicalDevice"
-        ],
-        "AnalysisPopulation.subsetOfIds": [
-            "StudyCohort",
-            "StudyDesignPopulation"
-        ],
-        "AssignedPerson.organizationId": [
-            "Organization"
-        ],
-        "BiomedicalConceptCategory.memberIds": [
-            "BiomedicalConcept"
-        ],
-        "BiomedicalConceptCategory.childIds": [
-            "BiomedicalConceptCategory"
-        ],
-        "Characteristic.dictionaryId": [
-            "SyntaxTemplateDictionary"
-        ],
-        "Condition.dictionaryId": [
-            "SyntaxTemplateDictionary"
-        ],
-        "Condition.contextIds": [
-            "Activity",
-            "ScheduledActivityInstance"
-        ],
-        "Condition.appliesToIds": [
-            "BiomedicalConceptCategory",
-            "Procedure",
-            "Activity",
-            "BiomedicalConcept",
-            "BiomedicalConceptSurrogate"
-        ],
-        "ConditionAssignment.conditionTargetId": [
-            "ScheduledActivityInstance",
-            "ScheduledDecisionInstance"
-        ],
-        "DocumentContentReference.appliesToId": [
-            "StudyDefinitionDocument"
-        ],
-        "EligibilityCriterion.criterionItemId": [
-            "EligibilityCriterionItem"
-        ],
-        "EligibilityCriterion.nextId": [
-            "EligibilityCriterion"
-        ],
-        "EligibilityCriterion.previousId": [
-            "EligibilityCriterion"
-        ],
-        "EligibilityCriterionItem.dictionaryId": [
-            "SyntaxTemplateDictionary"
-        ],
-        "Encounter.nextId": [
-            "Encounter"
-        ],
-        "Encounter.scheduledAtId": [
-            "Timing"
-        ],
-        "Encounter.previousId": [
-            "Encounter"
-        ],
-        "Endpoint.dictionaryId": [
-            "SyntaxTemplateDictionary"
-        ],
-        "Estimand.analysisPopulationId": [
-            "AnalysisPopulation"
-        ],
-        "Estimand.variableOfInterestId": [
-            "Endpoint"
-        ],
-        "Estimand.interventionIds": [
-            "StudyIntervention"
-        ],
-        "Identifier.scopeId": [
-            "Organization"
-        ],
-        "IntercurrentEvent.dictionaryId": [
-            "SyntaxTemplateDictionary"
-        ],
-        "InterventionalStudyDesign.documentVersionIds": [
-            "StudyDefinitionDocumentVersion"
-        ],
-        "InterventionalStudyDesign.studyInterventionIds": [
-            "StudyIntervention"
-        ],
-        "MedicalDevice.embeddedProductId": [
-            "AdministrableProduct"
-        ],
-        "MedicalDeviceIdentifier.scopeId": [
-            "Organization"
-        ],
-        "NarrativeContent.contentItemId": [
-            "NarrativeContentItem"
-        ],
-        "NarrativeContent.previousId": [
-            "NarrativeContent"
-        ],
-        "NarrativeContent.nextId": [
-            "NarrativeContent"
-        ],
-        "NarrativeContent.childIds": [
-            "NarrativeContent"
-        ],
-        "Objective.dictionaryId": [
-            "SyntaxTemplateDictionary"
-        ],
-        "ObservationalStudyDesign.documentVersionIds": [
-            "StudyDefinitionDocumentVersion"
-        ],
-        "ObservationalStudyDesign.studyInterventionIds": [
-            "StudyIntervention"
-        ],
-        "PopulationDefinition.criterionIds": [
-            "EligibilityCriterion"
-        ],
-        "Procedure.studyInterventionId": [
-            "StudyIntervention"
-        ],
-        "ProductOrganizationRole.appliesToIds": [
-            "AdministrableProduct",
-            "MedicalDevice"
-        ],
-        "ProductOrganizationRole.organizationId": [
-            "Organization"
-        ],
-        "ReferenceIdentifier.scopeId": [
-            "Organization"
-        ],
-        "ScheduleTimeline.entryId": [
-            "ScheduledActivityInstance",
-            "ScheduledDecisionInstance"
-        ],
-        "ScheduledActivityInstance.defaultConditionId": [
-            "ScheduledActivityInstance",
-            "ScheduledDecisionInstance"
-        ],
-        "ScheduledActivityInstance.epochId": [
-            "StudyEpoch"
-        ],
-        "ScheduledActivityInstance.activityIds": [
-            "Activity"
-        ],
-        "ScheduledActivityInstance.encounterId": [
-            "Encounter"
-        ],
-        "ScheduledActivityInstance.timelineId": [
-            "ScheduleTimeline"
-        ],
-        "ScheduledActivityInstance.timelineExitId": [
-            "ScheduleTimelineExit"
-        ],
-        "ScheduledDecisionInstance.defaultConditionId": [
-            "ScheduledActivityInstance",
-            "ScheduledDecisionInstance"
-        ],
-        "ScheduledDecisionInstance.epochId": [
-            "StudyEpoch"
-        ],
-        "ScheduledInstance.defaultConditionId": [
-            "ScheduledActivityInstance",
-            "ScheduledDecisionInstance"
-        ],
-        "ScheduledInstance.epochId": [
-            "StudyEpoch"
-        ],
-        "StudyAmendment.previousId": [
-            "StudyAmendment"
-        ],
-        "StudyArm.populationIds": [
-            "StudyCohort",
-            "StudyDesignPopulation"
-        ],
-        "StudyCell.armId": [
-            "StudyArm"
-        ],
-        "StudyCell.epochId": [
-            "StudyEpoch"
-        ],
-        "StudyCell.elementIds": [
-            "StudyElement"
-        ],
-        "StudyCohort.criterionIds": [
-            "EligibilityCriterion"
-        ],
-        "StudyCohort.indicationIds": [
-            "Indication"
-        ],
-        "StudyDefinitionDocument.childIds": [
-            "StudyDefinitionDocument"
-        ],
-        "StudyDesign.documentVersionIds": [
-            "StudyDefinitionDocumentVersion"
-        ],
-        "StudyDesign.studyInterventionIds": [
-            "StudyIntervention"
-        ],
-        "StudyDesignPopulation.criterionIds": [
-            "EligibilityCriterion"
-        ],
-        "StudyElement.studyInterventionIds": [
-            "StudyIntervention"
-        ],
-        "StudyEpoch.previousId": [
-            "StudyEpoch"
-        ],
-        "StudyEpoch.nextId": [
-            "StudyEpoch"
-        ],
-        "StudyIdentifier.scopeId": [
-            "Organization"
-        ],
-        "StudyRole.organizationIds": [
-            "Organization"
-        ],
-        "StudyRole.appliesToIds": [
-            "StudyVersion",
-            "InterventionalStudyDesign",
-            "ObservationalStudyDesign"
-        ],
-        "StudyVersion.documentVersionIds": [
-            "StudyDefinitionDocumentVersion"
-        ],
-        "SubjectEnrollment.forStudyCohortId": [
-            "StudyCohort"
-        ],
-        "SubjectEnrollment.forStudySiteId": [
-            "StudySite"
-        ],
-        "SyntaxTemplate.dictionaryId": [
-            "SyntaxTemplateDictionary"
-        ],
-        "Timing.relativeToScheduledInstanceId": [
-            "ScheduledActivityInstance",
-            "ScheduledDecisionInstance"
-        ],
-        "Timing.relativeFromScheduledInstanceId": [
-            "ScheduledActivityInstance",
-            "ScheduledDecisionInstance"
-        ]
-      };
-  **[instanceType] ~>
-    $map(function($v)
-      {
-        $keys($v)[$ ~> /^[a-zA-Z]+Id(s)?$/].
-          (
-            $idattr:=$;
-            $idfattr:=$join([$v.instanceType,$],".");
-            $refids:=$lookup($v,$);
-            $refids 
-            ? $refids.
-                {   
-                  "instanceType": $v.instanceType,
-                  "id": $v.id,
-                  "path": $v._path,
-                  "Id Attribute": $idattr,
-                  "Id Value": $,
-                  "Issue": 
-                    $ in $keys($idl)
-                    ? (
-                        $ent4id := $lookup($idl,$);
-                        $idfattr in $keys($valid_entities)
-                        ? (
-                            $ents4att := $lookup($valid_entities,$idfattr);
-                            $ent4id in $ents4att
-                            ? null
-                            : "Invalid entity [" & $ent4id & " not " &
-                              (   $count($ents4att) = 1
-                                  ? "a " & $ents4att[0] 
-                                  : "any of " & $join($ents4att,", ")
-                              ) & "]"
-                          )
-                        : null
-                      )
-                    : "Invalid id"                                    
-                }[Issue]
-          )
-      }
-    ) ~> $reduce($append)
-  )
+- Organization: CDISC
+  Standards:
+  - Name: USDM
+    References:
+    - Citations:
+      - Cited Guidance: Referenced id values must be valid according to the USDM schema based on the API
+          specification.
+        Document: USDM_CORE_Rules.xlsx
+      Origin: USDM Conformance Rules
+      Rule Identifier:
+        Id: DDF00262
+        Version: '1'
+      Version: '1.0'
+    Version: '4.0'
+Check: "(\n  $idl := **[id and instanceType]{id:$distinct(instanceType)};\n  $valid_entities := \n   \
+  \ {\n      \"Activity.biomedicalConceptIds\": [\n          \"BiomedicalConcept\"\n      ],\n      \"\
+  Activity.nextId\": [\n          \"Activity\"\n      ],\n      \"Activity.timelineId\": [\n         \
+  \ \"ScheduleTimeline\"\n      ],\n      \"Activity.childIds\": [\n          \"Activity\"\n      ],\n\
+  \      \"Activity.previousId\": [\n          \"Activity\"\n      ],\n      \"Activity.bcSurrogateIds\"\
+  : [\n          \"BiomedicalConceptSurrogate\"\n      ],\n      \"Activity.bcCategoryIds\": [\n     \
+  \     \"BiomedicalConceptCategory\"\n      ],\n      \"AdministrableProductIdentifier.scopeId\": [\n\
+  \          \"Organization\"\n      ],\n      \"Administration.administrableProductId\": [\n        \
+  \  \"AdministrableProduct\"\n      ],\n      \"Administration.medicalDeviceId\": [\n          \"MedicalDevice\"\
+  \n      ],\n      \"AnalysisPopulation.subsetOfIds\": [\n          \"StudyCohort\",\n          \"StudyDesignPopulation\"\
+  \n      ],\n      \"AssignedPerson.organizationId\": [\n          \"Organization\"\n      ],\n     \
+  \ \"BiomedicalConceptCategory.memberIds\": [\n          \"BiomedicalConcept\"\n      ],\n      \"BiomedicalConceptCategory.childIds\"\
+  : [\n          \"BiomedicalConceptCategory\"\n      ],\n      \"Characteristic.dictionaryId\": [\n \
+  \         \"SyntaxTemplateDictionary\"\n      ],\n      \"Condition.dictionaryId\": [\n          \"\
+  SyntaxTemplateDictionary\"\n      ],\n      \"Condition.contextIds\": [\n          \"Activity\",\n \
+  \         \"ScheduledActivityInstance\"\n      ],\n      \"Condition.appliesToIds\": [\n          \"\
+  BiomedicalConceptCategory\",\n          \"Procedure\",\n          \"Activity\",\n          \"BiomedicalConcept\"\
+  ,\n          \"BiomedicalConceptSurrogate\"\n      ],\n      \"ConditionAssignment.conditionTargetId\"\
+  : [\n          \"ScheduledActivityInstance\",\n          \"ScheduledDecisionInstance\"\n      ],\n \
+  \     \"DocumentContentReference.appliesToId\": [\n          \"StudyDefinitionDocument\"\n      ],\n\
+  \      \"EligibilityCriterion.criterionItemId\": [\n          \"EligibilityCriterionItem\"\n      ],\n\
+  \      \"EligibilityCriterion.nextId\": [\n          \"EligibilityCriterion\"\n      ],\n      \"EligibilityCriterion.previousId\"\
+  : [\n          \"EligibilityCriterion\"\n      ],\n      \"EligibilityCriterionItem.dictionaryId\":\
+  \ [\n          \"SyntaxTemplateDictionary\"\n      ],\n      \"Encounter.nextId\": [\n          \"Encounter\"\
+  \n      ],\n      \"Encounter.scheduledAtId\": [\n          \"Timing\"\n      ],\n      \"Encounter.previousId\"\
+  : [\n          \"Encounter\"\n      ],\n      \"Endpoint.dictionaryId\": [\n          \"SyntaxTemplateDictionary\"\
+  \n      ],\n      \"Estimand.analysisPopulationId\": [\n          \"AnalysisPopulation\"\n      ],\n\
+  \      \"Estimand.variableOfInterestId\": [\n          \"Endpoint\"\n      ],\n      \"Estimand.interventionIds\"\
+  : [\n          \"StudyIntervention\"\n      ],\n      \"Identifier.scopeId\": [\n          \"Organization\"\
+  \n      ],\n      \"IntercurrentEvent.dictionaryId\": [\n          \"SyntaxTemplateDictionary\"\n  \
+  \    ],\n      \"InterventionalStudyDesign.documentVersionIds\": [\n          \"StudyDefinitionDocumentVersion\"\
+  \n      ],\n      \"InterventionalStudyDesign.studyInterventionIds\": [\n          \"StudyIntervention\"\
+  \n      ],\n      \"MedicalDevice.embeddedProductId\": [\n          \"AdministrableProduct\"\n     \
+  \ ],\n      \"MedicalDeviceIdentifier.scopeId\": [\n          \"Organization\"\n      ],\n      \"NarrativeContent.contentItemId\"\
+  : [\n          \"NarrativeContentItem\"\n      ],\n      \"NarrativeContent.previousId\": [\n      \
+  \    \"NarrativeContent\"\n      ],\n      \"NarrativeContent.nextId\": [\n          \"NarrativeContent\"\
+  \n      ],\n      \"NarrativeContent.childIds\": [\n          \"NarrativeContent\"\n      ],\n     \
+  \ \"Objective.dictionaryId\": [\n          \"SyntaxTemplateDictionary\"\n      ],\n      \"ObservationalStudyDesign.documentVersionIds\"\
+  : [\n          \"StudyDefinitionDocumentVersion\"\n      ],\n      \"ObservationalStudyDesign.studyInterventionIds\"\
+  : [\n          \"StudyIntervention\"\n      ],\n      \"PopulationDefinition.criterionIds\": [\n   \
+  \       \"EligibilityCriterion\"\n      ],\n      \"Procedure.studyInterventionId\": [\n          \"\
+  StudyIntervention\"\n      ],\n      \"ProductOrganizationRole.appliesToIds\": [\n          \"AdministrableProduct\"\
+  ,\n          \"MedicalDevice\"\n      ],\n      \"ProductOrganizationRole.organizationId\": [\n    \
+  \      \"Organization\"\n      ],\n      \"ReferenceIdentifier.scopeId\": [\n          \"Organization\"\
+  \n      ],\n      \"ScheduleTimeline.entryId\": [\n          \"ScheduledActivityInstance\",\n      \
+  \    \"ScheduledDecisionInstance\"\n      ],\n      \"ScheduledActivityInstance.defaultConditionId\"\
+  : [\n          \"ScheduledActivityInstance\",\n          \"ScheduledDecisionInstance\"\n      ],\n \
+  \     \"ScheduledActivityInstance.epochId\": [\n          \"StudyEpoch\"\n      ],\n      \"ScheduledActivityInstance.activityIds\"\
+  : [\n          \"Activity\"\n      ],\n      \"ScheduledActivityInstance.encounterId\": [\n        \
+  \  \"Encounter\"\n      ],\n      \"ScheduledActivityInstance.timelineId\": [\n          \"ScheduleTimeline\"\
+  \n      ],\n      \"ScheduledActivityInstance.timelineExitId\": [\n          \"ScheduleTimelineExit\"\
+  \n      ],\n      \"ScheduledDecisionInstance.defaultConditionId\": [\n          \"ScheduledActivityInstance\"\
+  ,\n          \"ScheduledDecisionInstance\"\n      ],\n      \"ScheduledDecisionInstance.epochId\": [\n\
+  \          \"StudyEpoch\"\n      ],\n      \"ScheduledInstance.defaultConditionId\": [\n          \"\
+  ScheduledActivityInstance\",\n          \"ScheduledDecisionInstance\"\n      ],\n      \"ScheduledInstance.epochId\"\
+  : [\n          \"StudyEpoch\"\n      ],\n      \"StudyAmendment.previousId\": [\n          \"StudyAmendment\"\
+  \n      ],\n      \"StudyArm.populationIds\": [\n          \"StudyCohort\",\n          \"StudyDesignPopulation\"\
+  \n      ],\n      \"StudyCell.armId\": [\n          \"StudyArm\"\n      ],\n      \"StudyCell.epochId\"\
+  : [\n          \"StudyEpoch\"\n      ],\n      \"StudyCell.elementIds\": [\n          \"StudyElement\"\
+  \n      ],\n      \"StudyCohort.criterionIds\": [\n          \"EligibilityCriterion\"\n      ],\n  \
+  \    \"StudyCohort.indicationIds\": [\n          \"Indication\"\n      ],\n      \"StudyDefinitionDocument.childIds\"\
+  : [\n          \"StudyDefinitionDocument\"\n      ],\n      \"StudyDesign.documentVersionIds\": [\n\
+  \          \"StudyDefinitionDocumentVersion\"\n      ],\n      \"StudyDesign.studyInterventionIds\"\
+  : [\n          \"StudyIntervention\"\n      ],\n      \"StudyDesignPopulation.criterionIds\": [\n  \
+  \        \"EligibilityCriterion\"\n      ],\n      \"StudyElement.studyInterventionIds\": [\n      \
+  \    \"StudyIntervention\"\n      ],\n      \"StudyEpoch.previousId\": [\n          \"StudyEpoch\"\n\
+  \      ],\n      \"StudyEpoch.nextId\": [\n          \"StudyEpoch\"\n      ],\n      \"StudyIdentifier.scopeId\"\
+  : [\n          \"Organization\"\n      ],\n      \"StudyRole.organizationIds\": [\n          \"Organization\"\
+  \n      ],\n      \"StudyRole.appliesToIds\": [\n          \"StudyVersion\",\n          \"InterventionalStudyDesign\"\
+  ,\n          \"ObservationalStudyDesign\"\n      ],\n      \"StudyVersion.documentVersionIds\": [\n\
+  \          \"StudyDefinitionDocumentVersion\"\n      ],\n      \"SubjectEnrollment.forStudyCohortId\"\
+  : [\n          \"StudyCohort\"\n      ],\n      \"SubjectEnrollment.forStudySiteId\": [\n          \"\
+  StudySite\"\n      ],\n      \"SyntaxTemplate.dictionaryId\": [\n          \"SyntaxTemplateDictionary\"\
+  \n      ],\n      \"Timing.relativeToScheduledInstanceId\": [\n          \"ScheduledActivityInstance\"\
+  ,\n          \"ScheduledDecisionInstance\"\n      ],\n      \"Timing.relativeFromScheduledInstanceId\"\
+  : [\n          \"ScheduledActivityInstance\",\n          \"ScheduledDecisionInstance\"\n      ]\n  \
+  \  };\n**[instanceType] ~>\n  $map(function($v)\n    {\n      $keys($v)[$ ~> /^[a-zA-Z]+Id(s)?$/].\n\
+  \        (\n          $idattr:=$;\n          $idfattr:=$join([$v.instanceType,$],\".\");\n         \
+  \ $refids:=$lookup($v,$);\n          $refids \n          ? $refids.\n              {   \n          \
+  \      \"instanceType\": $v.instanceType,\n                \"id\": $v.id,\n                \"path\"\
+  : $v._path,\n                \"Id Attribute\": $idattr,\n                \"Id Value\": $,\n        \
+  \        \"Issue\": \n                  $ in $keys($idl)\n                  ? (\n                  \
+  \    $ent4id := $lookup($idl,$);\n                      $idfattr in $keys($valid_entities)\n       \
+  \               ? (\n                          $ents4att := $lookup($valid_entities,$idfattr);\n   \
+  \                       $ent4id in $ents4att\n                          ? null\n                   \
+  \       : \"Invalid entity [\" & $ent4id & \" not \" &\n                            (   $count($ents4att)\
+  \ = 1\n                                ? \"a \" & $ents4att[0] \n                                : \"\
+  any of \" & $join($ents4att,\", \")\n                            ) & \"]\"\n                       \
+  \ )\n                      : null\n                    )\n                  : \"Invalid id\"       \
+  \                             \n              }[Issue]\n        )\n    }\n  ) ~> $reduce($append)\n)"
 Core:
   Id: ''
   Status: Draft
   Version: '1'
-Description: 'Referenced id values must be valid according to the USDM schema
-  based on the API specification.'
+Description: Referenced id values must be valid according to the USDM schema based on the API specification.
 Executability: Fully Executable
 Outcome:
-  Message: 'The referenced id value is not valid - the id value doesn''t match any
-    object or the id value refers to an instance of an incorrect entity.'
+  Message: The referenced id value is not valid - the id value doesn't match any object or the id value
+    refers to an instance of an incorrect entity.
   Output Variables:
-    - 'Id Attribute'
-    - 'Id Value'
-    - Issue
+  - Id Attribute
+  - Id Value
+  - Issue
 Rule Type: JSONata
 Scope:
   Entities:
     Include:
-      - 'ALL'
+    - ALL
 Sensitivity: Record
