@@ -1,0 +1,50 @@
+Authorities:
+  - Organization: 'CDISC'
+    Standards:
+      - Name: 'SDTMIG'
+        References:
+          - Citations:
+              - Cited Guidance: 'The characterization of the start of an observation relative to a reference time point. The sponsor-defined reference time point is in --STTPT.'
+                Document: 'Model v2.0'
+                Item: '--STRTPT'
+                Section: 'Timing'
+            Criteria:
+              Logical Expression:
+                Condition: ''
+                Rule: ''
+              Plain Language Expression: ''
+              Type: 'Success'
+            Origin: SDTM and SDTMIG Conformance Rules
+            Release Notes: ''
+            Rule Identifier:
+              Id: 'CG0060'
+              Version: '1'
+            Validator Rule Message: ''
+            Version: '2.0'
+        Version: '3.4'
+Check:
+  all:
+    - name: '--STTPT'
+      operator: 'non_empty'
+    - name: '--STRTPT'
+      operator: 'empty'
+Core:
+  Id: 'CORE-000001'
+  Status: Published
+  Version: '1'
+Description: 'Raise an error if the value of --STTPT is present and--STRTPT is not present.'
+Executability: Fully Executable
+Outcome:
+  Message: ' --STTPT is present but--STRTPT is not present'
+  Output Variables:
+    - '--STTPT'
+    - '--STRTPT'
+Rule Type: 'Record Data'
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Dataset

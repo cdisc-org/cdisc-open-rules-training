@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "C:\Users\valen\cdisc-open-rules-training\engine\core.py", line 21, in <module>
+    from cdisc_rules_engine.config import config
+  File "C:\Users\valen\cdisc-open-rules-training\engine\cdisc_rules_engine\__init__.py", line 1, in <module>
+    from .plugin_loader import PluginLoader
+  File "C:\Users\valen\cdisc-open-rules-training\engine\cdisc_rules_engine\plugin_loader.py", line 9, in <module>
+    from cdisc_rules_engine.interfaces import FactoryInterface
+  File "C:\Users\valen\cdisc-open-rules-training\engine\cdisc_rules_engine\interfaces\__init__.py", line 4, in <module>
+    from .data_reader_interface import DataReaderInterface
+  File "C:\Users\valen\cdisc-open-rules-training\engine\cdisc_rules_engine\interfaces\data_reader_interface.py", line 1, in <module>
+    from cdisc_rules_engine.models.dataset import PandasDataset
+  File "C:\Users\valen\cdisc-open-rules-training\engine\cdisc_rules_engine\models\dataset\__init__.py", line 6, in <module>
+    from .dask_dataset import DaskDataset
+  File "C:\Users\valen\cdisc-open-rules-training\engine\cdisc_rules_engine\models\dataset\dask_dataset.py", line 1, in <module>
+    from cdisc_rules_engine.models.dataset.pandas_dataset import PandasDataset
+  File "C:\Users\valen\cdisc-open-rules-training\engine\cdisc_rules_engine\models\dataset\pandas_dataset.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
