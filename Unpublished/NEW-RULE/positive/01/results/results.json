@@ -1,0 +1,44 @@
+{
+  "Conformance_Details": {
+    "Report_Generation": "2026-09-17T13:00:45",
+    "Total_Runtime": "7.67 seconds",
+    "CORE_Engine_Version": "0.17.1",
+    "Issue_Limit_Per_Rule": "None",
+    "Issue_Limit_Per_Dataset": "None",
+    "Issue_Limit_Per_Sheet": null,
+    "Standard": "SDTMIG",
+    "Version": "V3.4",
+    "CT_Version": "",
+    "Define_XML_Version": null
+  },
+  "Dataset_Details": [
+    {
+      "filename": "CM",
+      "label": "Concomitant/Prior Medications",
+      "path": "C:\\Users\\els_janssens\\CORE\\Rule_Authoring_CDISC_training\\cdisc-open-rules-training\\Unpublished\\NEW-RULE\\positive\\01\\data",
+      "modification_date": "2026-05-13T11:25:10.870952",
+      "size_kb": 1.372,
+      "length": 10
+    },
+    {
+      "filename": "MH",
+      "label": "Medical History",
+      "path": "C:\\Users\\els_janssens\\CORE\\Rule_Authoring_CDISC_training\\cdisc-open-rules-training\\Unpublished\\NEW-RULE\\positive\\01\\data",
+      "modification_date": "2026-09-17T12:59:17.217881",
+      "size_kb": 0.958,
+      "length": 9
+    }
+  ],
+  "Issue_Summary": [],
+  "Issue_Details": [],
+  "Rules_Report": [
+    {
+      "core_id": "CORE-000106",
+      "version": "1",
+      "cdisc_rule_id": "CG0045",
+      "fda_rule_id": "",
+      "message": "--ENTPT is populated, but --ENRTPT is not populated.",
+      "status": "SUCCESS"
+    }
+  ]
+}
